@@ -43,11 +43,11 @@ def find_file_in_directory(filename, directory):
     return None 
 @st.cache_resource
 def query(question, name_file):
-    vector_db = Chroma(persist_directory= "/home/datnt/workspace/rag_langchain/data_embeded/all", embedding_function= embedding)
+    vector_db = Chroma(persist_directory= "data_embeded/all", embedding_function= embedding)
     # vector_db.get()
     # Tạo retriever để truy vấn dữ liệu
     # retriever = vector_db.as_retriever()
-    directory = find_file_in_directory(name_file,"/home/datnt/workspace/rag_langchain/2024" )
+    directory = find_file_in_directory(name_file,"2024" )
     if directory == None:
         retriever = vector_db.as_retriever()
         print(1)
